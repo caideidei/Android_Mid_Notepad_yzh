@@ -61,7 +61,7 @@ public static String StringToDate(String str_data)
 ### 笔记列表界面
 - 显示所有笔记的标题、内容摘要和创建时间（时间戳）。
 - **截图展示**：  
-<img src="screenshots/1.png" width="400" height="auto"/>
+<img src="screenshots/1.png" width="200" height="auto"/>
 
 ### 笔记查询
 - 在笔记列表页面，用户可以通过搜索框输入查询条件，点击搜索过滤符合条件的笔记。
