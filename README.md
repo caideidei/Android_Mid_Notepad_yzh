@@ -66,12 +66,12 @@ public static String StringToDate(String str_data)
 ### 笔记查询
 - 在笔记列表页面，用户可以通过搜索框输入查询条件，点击搜索过滤符合条件的笔记。
 - **截图展示**：  
-  <img src="screenshots/2.png" width="200" height="auto"/>
+<img src="screenshots/2.png" width="200" height="auto"/>
 
 ### 代办功能
 - 每条笔记都有一个代办按钮，用户可以完成某条笔记。
 - **截图展示**：  
-  <img src="screenshots/9.png" width="200" height="auto"/>
+<img src="screenshots/9.png" width="200" height="auto"/>
 
 ### UI美化（更换背景功能）
 - 可以进行背景的更换来对笔记进行美化，同时可以有多种背景进行选择更换
