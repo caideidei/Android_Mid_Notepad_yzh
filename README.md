@@ -55,31 +55,31 @@ public static String StringToDate(String str_data)
 ### 笔记列表界面
 - 显示所有笔记的标题、内容摘要和创建时间（时间戳）。
 **截图展示**：  
-![时间戳功能](screenshot/1.png)
+![时间戳功能](screenshots/1.png)
 
 ### 笔记查询
 - 在笔记列表页面，用户可以通过搜索框输入查询条件，点击搜索过滤符合条件的笔记。
   **截图展示**：  
-  ![搜索笔记功能](screenshot/2.png)
+  ![搜索笔记功能](screenshots/2.png)
 
 ### 代办功能
 - 每条笔记都有一个代办按钮，用户可以完成某条笔记。
   **截图展示**：  
-  ![搜索笔记功能](screenshot/9.png)
+  ![搜索笔记功能](screenshots/9.png)
 
 ### UI美化（更换背景功能）
 - 可以进行背景的更换来对笔记进行美化，同时可以有多种背景进行选择更换
   **截图展示**：  
-  ![更换背景功能](screenshot/3.png)
-  ![更换背景功能](screenshot/4.png)
-  ![更换背景功能](screenshot/5.png)
+  ![更换背景功能](screenshots/3.png)
+  ![更换背景功能](screenshots/4.png)
+  ![更换背景功能](screenshots/5.png)
 
 ### 重新排序功能
 - 默认的笔记排序方式是根据时间来进行排序，最新创建的笔记在最上面，我们可以对笔记进行反向排序
   **截图展示**：  
-  ![重新排序功能](screenshot/6.png)
-  ![重新排序功能](screenshot/7.png)
-  ![重新排序功能](screenshot/8.png)
+  ![重新排序功能](screenshots/6.png)
+  ![重新排序功能](screenshots/7.png)
+  ![重新排序功能](screenshots/8.png)
 
 ---
 
