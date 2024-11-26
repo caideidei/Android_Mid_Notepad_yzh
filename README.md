@@ -59,27 +59,6 @@
   - 提供插入、更新、删除和查询笔记的功能。
   - 支持按标题和内容查询笔记。
 
-## 安装与运行
-
-### 1. 克隆项目
-   首先将项目从 GitHub 克隆到本地：
-
-   ```bash
-   git clone https://github.com/yourusername/NotepadApp.git
-   ```
-
-### 2. 打开项目
-   在 Android Studio 中打开该项目：
-
-   - 打开 Android Studio，点击 **Open an existing project**，选择本地克隆下来的项目文件夹。
-   - 等待 Gradle 构建完成。
-
-### 3. 编译并运行应用
-   - 点击 **Run** 按钮，选择连接的 Android 设备或模拟器。
-   - 应用将在设备或模拟器上启动，用户可以开始使用。
-
----
-
 ## 功能演示
 
 ### 笔记列表界面
@@ -109,13 +88,6 @@
   - RecyclerView: 用于展示笔记列表。
   - SQLite: 用于存储和查询笔记数据。
 
----
-
-## 贡献
-
-欢迎任何形式的贡献！如果你遇到了 Bug 或有改进建议，可以通过以下方式参与：
-1. 提交 Issue。
-2. Fork 项目并提交 Pull Request。
 
 感谢你对该项目的关注和支持！
 
