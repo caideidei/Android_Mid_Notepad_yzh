@@ -37,7 +37,7 @@ public static String StringToDate(String str_data)
 - **实现方式**：在数据库中使用 `LIKE` 查询语句，分别对笔记的标题和内容进行匹配，支持模糊搜索。
 - **查询界面**：在笔记列表页面顶部添加一个搜索框，用户输入查询内容后，会实时更新显示符合条件的笔记条目。
 - **关键代码**：
-  在onClick方法中，当用户点击搜索按钮时，会执行查询操作，在这里，如果搜索框为空，会执行与onCreate中类似的查询，查询所有笔记并显示。如果搜索框有内容，则会通过adapter.Search()方法进行自定义的搜索查询。
+- 在onClick方法中，当用户点击搜索按钮时，会执行查询操作，在这里，如果搜索框为空，会执行与onCreate中类似的查询，查询所有笔记并显示。如果搜索框有内容，则会通过adapter.Search()方法进行自定义的搜索查询。
 ```java
 if (et_Search.getText().toString().equals("")) {
     // 如果搜索框为空，查询所有笔记
@@ -67,12 +67,12 @@ if (et_Search.getText().toString().equals("")) {
     - 更新了按钮样式，增加了阴影和圆角效果，使界面更加现代化。
     - 改善了字体和布局，使信息展示更为清晰。
 - **关键代码**：
-  在onCreate方法中，有一段代码通过MY_Application.getBackground()设置了LinearLayout和ListView的背景颜色，ll_noteList（笔记列表的父布局）和lv_notesList（笔记列表）背景颜色会被设置为MY_Application.getBackground()返回的颜色值。MY_Application.getBackground()可能是一个字符串，表示颜色的十六进制值（如#FFFFFF）或者其它有效的颜色格式。
+- 在onCreate方法中，有一段代码通过MY_Application.getBackground()设置了LinearLayout和ListView的背景颜色，ll_noteList（笔记列表的父布局）和lv_notesList（笔记列表）背景颜色会被设置为MY_Application.getBackground()返回的颜色值。MY_Application.getBackground()可能是一个字符串，表示颜色的十六进制值（如#FFFFFF）或者其它有效的颜色格式。
 ```java
 ll_noteList.setBackgroundColor(Color.parseColor(MY_Application.getBackground()));
 lv_notesList.setBackgroundColor(Color.parseColor(MY_Application.getBackground()));
 ```
-在这个方法中，showpopSelectBgWindows会显示一个对话框，允许用户选择不同的背景主题。对话框的布局是通过R.layout.dialog_bg_select_layout实现的，标题也被自定义为请挑选你的背景主题。当用户选择某个背景主题时，实际的背景更改逻辑是在ColorSelect方法中实现的。这个方法会根据用户点击的背景选项更改LinearLayout和ListView的背景。
+- 在这个方法中，showpopSelectBgWindows会显示一个对话框，允许用户选择不同的背景主题。对话框的布局是通过R.layout.dialog_bg_select_layout实现的，标题也被自定义为请挑选你的背景主题。当用户选择某个背景主题时，实际的背景更改逻辑是在ColorSelect方法中实现的。这个方法会根据用户点击的背景选项更改LinearLayout和ListView的背景。
 ```java
 private void showpopSelectBgWindows(){
   LayoutInflater inflater = LayoutInflater.from(this);
@@ -193,7 +193,8 @@ getContentResolver().delete(noteUri, null, null);
 - **实现方式**：查询笔记时，按照时间戳进行降序排序。
 - **展示效果**：用户能够看到原先的笔记始终在列表的顶部，而新的笔记则排在下面。
 - **关键代码**：
-  查询笔记时的排序： 在managedQuery方法中，查询笔记时使用了NotePad.Notes.DEFAULT_SORT_ORDER作为排序依据，这意味着笔记列表会按照该默认排序规则返回数据。可以在NotePad.Notes.DEFAULT_SORT_ORDER中修改排序规则来实现倒序排序。
+  查询笔记时的排序： 
+- 在managedQuery方法中，查询笔记时使用了NotePad.Notes.DEFAULT_SORT_ORDER作为排序依据，这意味着笔记列表会按照该默认排序规则返回数据。可以在NotePad.Notes.DEFAULT_SORT_ORDER中修改排序规则来实现倒序排序。
 ```java
 Cursor cursor = managedQuery(
         getIntent().getData(),            // 使用默认的内容URI
