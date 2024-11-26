@@ -148,7 +148,40 @@ public void ColorSelect(View view){
 - **功能实现**：
     - 在每条笔记旁增加一个代办按钮来进行删除笔记
 - **关键代码**：
+- 在NotesList类的onContextItemSelected方法中，定义了长按条目后的菜单选项，包括删除笔记的选项。删除笔记的逻辑通过case语句处理。
 ```java
+@Override
+public boolean onContextItemSelected(MenuItem item) {
+    AdapterView.AdapterContextMenuInfo info;
+
+    try {
+        info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+    } catch (ClassCastException e) {
+        Log.e(TAG, "bad menuInfo", e);
+        return false;
+    }
+
+    Uri noteUri = ContentUris.withAppendedId(getIntent().getData(), Integer.parseInt(adapter.getmDate().get(info.position).getCursor_id()));
+
+    switch (item.getItemId()) {
+        case R.id.context_open:
+            // Launch activity to view/edit the currently selected item
+            startActivity(new Intent(Intent.ACTION_EDIT, noteUri));
+            return true;
+
+        case R.id.context_delete: // 删除笔记选项
+            // 执行删除操作
+            getContentResolver().delete(noteUri, null, null); // 通过ContentResolver删除笔记
+            return true;
+
+        default:
+            return super.onContextItemSelected(item);
+    }
+}
+```
+-删除笔记的实现 在onContextItemSelected方法中，case R.id.context_delete处理了完成代办（删除）操作
+```java
+getContentResolver().delete(noteUri, null, null);
 ```
 - **截图展示**：  
   <img src="screenshots/9.png" width="200" height="auto"/>
