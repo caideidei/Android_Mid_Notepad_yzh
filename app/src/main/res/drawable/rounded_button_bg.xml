@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/AliceBlue" /> <!-- 背景颜色 -->
+    <corners android:radius="32dp" /> <!-- 圆形效果 -->
+</shape>

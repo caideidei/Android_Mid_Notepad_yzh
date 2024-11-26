@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="8dp"
+    android:background="#F5F5F5">
+
+    <!-- 每一行是一个水平LinearLayout，包含标签和图片 -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingBottom="8dp">
+
+        <!-- 标签 1 -->
+        <TextView
+            android:id="@+id/label_zero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="紫霞之梦"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- 图片 1 -->
+        <ImageView
+            android:id="@+id/zero"
+            android:layout_width="240dp"
+            android:layout_height="60dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/img_6"
+            android:contentDescription="@null"
+            android:onClick="ColorSelect" />
+    </LinearLayout>
+
+    <!-- 每一行是一个水平LinearLayout，包含标签和图片 -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingBottom="8dp">
+
+        <!-- 标签 2 -->
+        <TextView
+            android:id="@+id/label_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="金秋柔光"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- 图片 2 -->
+        <ImageView
+            android:id="@+id/one"
+            android:layout_width="240dp"
+            android:layout_height="60dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/img_5"
+            android:contentDescription="@null"
+            android:onClick="ColorSelect" />
+    </LinearLayout>
+
+    <!-- 每一行是一个水平LinearLayout，包含标签和图片 -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingBottom="8dp">
+
+        <!-- 标签 3 -->
+        <TextView
+            android:id="@+id/label_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="天蓝心语"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- 图片 3 -->
+        <ImageView
+            android:id="@+id/two"
+            android:layout_width="240dp"
+            android:layout_height="60dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/img_4"
+            android:contentDescription="@null"
+            android:onClick="ColorSelect" />
+    </LinearLayout>
+
+    <!-- 每一行是一个水平LinearLayout，包含标签和图片 -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingBottom="8dp">
+
+        <!-- 标签 4 -->
+        <TextView
+            android:id="@+id/label_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="樱花浅梦"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- 图片 4 -->
+        <ImageView
+            android:layout_width="240dp"
+            android:layout_height="60dp"
+            android:layout_margin="4dp"
+            android:id="@+id/three"
+            android:background="@drawable/img_3"
+            android:contentDescription="@null"
+            android:onClick="ColorSelect" />
+    </LinearLayout>
+
+    <!-- 每一行是一个水平LinearLayout，包含标签和图片 -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingBottom="8dp">
+
+        <!-- 标签 5 -->
+        <TextView
+            android:id="@+id/label_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="翠影晨曦"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- 图片 5 -->
+        <ImageView
+            android:layout_width="240dp"
+            android:layout_height="60dp"
+            android:layout_margin="4dp"
+            android:id="@+id/four"
+            android:background="@drawable/img_2"
+            android:contentDescription="@null"
+            android:onClick="ColorSelect" />
+    </LinearLayout>
+
+    <!-- 每一行是一个水平LinearLayout，包含标签和图片 -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingBottom="8dp">
+
+        <!-- 标签 6 -->
+        <TextView
+            android:id="@+id/label_five"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="碧林幽语"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- 图片 6 -->
+        <ImageView
+            android:layout_width="240dp"
+            android:layout_height="60dp"
+            android:layout_margin="4dp"
+            android:id="@+id/five"
+            android:background="@drawable/img_1"
+            android:contentDescription="@null"
+            android:onClick="ColorSelect" />
+    </LinearLayout>
+
+    <!-- 每一行是一个水平LinearLayout，包含标签和图片 -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingBottom="8dp">
+
+        <!-- 标签 7 -->
+        <TextView
+            android:id="@+id/label_six"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="月白如霜"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- 图片 7 -->
+        <ImageView
+            android:layout_width="240dp"
+            android:layout_height="60dp"
+            android:layout_margin="4dp"
+            android:id="@+id/six"
+            android:background="@drawable/img"
+            android:contentDescription="@null"
+            android:onClick="ColorSelect" />
+    </LinearLayout>
+
+</LinearLayout>

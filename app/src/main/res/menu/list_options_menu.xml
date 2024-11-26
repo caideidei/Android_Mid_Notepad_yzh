@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_add"
+        android:icon="@android:drawable/screen_background_dark"
+        android:title="@string/menu_add"
+        android:alphabeticShortcut="a"
+        android:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_paste"
+        android:icon="@drawable/addnote"
+        android:title="@string/menu_paste"
+        android:alphabeticShortcut="p"
+        android:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/bg_change"
+        android:icon="@android:drawable/ic_dialog_info"
+        android:title="@string/background"
+        android:showAsAction="never" />
+
+    <!-- 新增分类筛选 -->
+    <item
+        android:id="@+id/menu_filter_category"
+        android:title="反向排序"
+        android:showAsAction="never" />
+
+</menu>

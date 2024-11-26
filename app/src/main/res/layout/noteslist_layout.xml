@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFDF5"
+    android:id="@+id/noteList_layout"
+    android:padding="16dp"
+    android:gravity="center_vertical">
+
+
+
+    <!-- 分类标题 -->
+    <TextView
+        android:id="@+id/note_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-medium" />
+
+
+    <!-- 搜索栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="@drawable/search_bar_bg"
+        android:layout_marginBottom="12dp"
+        android:elevation="4dp"
+        android:clipToPadding="false">
+
+        <!-- 搜索输入框 -->
+        <EditText
+            android:id="@+id/et_Search"
+            android:layout_width="296dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:fontFamily="sans-serif"
+            android:gravity="center_vertical"
+            android:hint=""
+            android:inputType="text"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textColor="#333333"
+            android:textColorHint="#B3B3B3"
+            android:textSize="14sp" />
+
+        <!-- 搜索按钮 -->
+        <ImageView
+            android:id="@+id/iv_searchnotes"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="搜索按钮"
+            android:src="@drawable/search" />
+<!--        android:tint="#696969"-->
+
+
+
+    </LinearLayout>
+
+    <!-- 内容区域 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:ignore="ExtraText">
+
+        <!-- 列表 -->
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#E0E0E0"
+            android:dividerHeight="0.5dp"
+            android:cacheColorHint="@android:color/transparent"
+            android:paddingBottom="8dp"
+            android:clipToPadding="false"
+            android:background="#FFFFFF" />
+
+        <!-- 优化后的添加按钮 -->
+        <ImageButton
+            android:id="@+id/fab"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:src="@drawable/add_icon"
+            android:backgroundTint="#FFCF40"
+            android:contentDescription="添加笔记"
+            android:elevation="12dp"
+            android:background="@android:color/transparent"
+            android:scaleType="center" />
+
+    </FrameLayout>
+</LinearLayout>

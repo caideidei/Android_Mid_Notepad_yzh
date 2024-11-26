@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 阴影效果 -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#1A000000" /> <!-- 更柔和的半透明黑色阴影 -->
+            <corners android:radius="12dp" /> <!-- 阴影的圆角半径，与主背景一致 -->
+        </shape>
+    </item>
+
+    <!-- 主背景 -->
+    <item android:top="3dp" android:bottom="3dp" android:left="3dp" android:right="3dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF" /> <!-- 主背景白色 -->
+            <corners android:radius="12dp" /> <!-- 圆角半径 -->
+        </shape>
+    </item>
+
+</layer-list>
+

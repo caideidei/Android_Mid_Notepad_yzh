@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <!-- Spinner: 无需修改 -->
+    <Spinner
+        android:id="@+id/spinner_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/category_options" />
+
+    <!-- 时间戳显示 -->
+    <TextView
+        android:id="@+id/timestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_gravity="end"
+        android:paddingBottom="5dp"
+        android:text="Last Edited: 2024-11-19 15:45" />
+
+    <!-- 可编辑文本视图 -->
+    <view
+        class="com.example.android.notepad.NoteEditor$LinedEditText"
+        android:id="@+id/note"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:scrollbars="vertical"
+        android:fadingEdge="vertical"
+        android:gravity="top"
+        android:textSize="22sp"
+        android:capitalize="sentences"
+        android:contentDescription="A text area to edit or write notes. Double-tap to start typing."
+        android:focusable="true"
+        android:importantForAccessibility="yes" />
+
+    <!-- 新增分类选择 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="选择分类"
+        android:padding="8dp"
+        android:background="#FFFFFF"
+    android:textColor="#000000" />
+
+
+    <Spinner
+        android:id="@+id/note_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

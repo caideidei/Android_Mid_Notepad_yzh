@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 阴影层 -->
+    <item>
+        <shape>
+            <solid android:color="#80000000" /> <!-- 半透明的黑色，用于模拟阴影 -->
+            <corners android:radius="12dp" /> <!-- 圆角半径 -->
+        </shape>
+    </item>
+
+    <!-- 背景层 -->
+    <item android:top="2dp" android:left="2dp"> <!-- 偏移以显示阴影 -->
+        <shape>
+            <solid android:color="#FFFFFF" /> <!-- 白色背景 -->
+            <corners android:radius="12dp" /> <!-- 圆角半径 -->
+        </shape>
+    </item>
+
+</layer-list>
