@@ -12,6 +12,16 @@
 
 - **实现方式**：使用当前系统时间（`System.currentTimeMillis()`）作为笔记的创建时间戳，并将其保存到数据库中。
 - **展示效果**：时间戳会以格式化后的日期时间（如 `2024-11-26 14:30:33`）展示在笔记条目旁。
+- **关键代码**：
+```java
+public static String StringToDate(String str_data)
+    {
+        String beginDate=str_data;
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String sd = sdf.format(new Date(Long.parseLong(beginDate)));
+        return  sd;
+    }
+```
 
 ### 2. **笔记查询功能**
 用户可以通过标题或内容对笔记进行模糊查询，快速找到需要的笔记。
