@@ -1,46 +1,124 @@
-## 配置详情
 
-### 1. `使用JDK9的版本`
+# Android Notepad 项目文档
 
-### 2. `gradle-wrapper.properties`
+## 项目概述
 
-请使用以下配置的 `distributionUrl`：
+这是一个 Android 笔记应用（Notepad），旨在为用户提供一个简洁、易用的记事工具。项目基于基础的笔记管理功能（如创建、编辑、删除笔记），并在此基础上进行了拓展和优化。扩展功能包括笔记条目时间戳显示、笔记查询、UI美化、代办功能和反向排序，目标是提高用户体验和提升功能的多样性。
 
-![Alt Text](./001.png)
+## 功能描述
 
-```properties
-distributionUrl=https\://services.gradle.org/distributions/gradle-6.7.1-bin.zip
-```
+### 1. **笔记条目增加时间戳显示**
+   在 **NoteList** 界面，每一条笔记都会显示一个时间戳，表示笔记的创建时间。用户可以通过这个时间戳判断笔记的添加顺序。
 
-### 3.  `build.gradle(notepad)`
-classpath请使用3.4.0:
+   - **实现方式**：使用当前系统时间（`System.currentTimeMillis()`）作为笔记的创建时间戳，并将其保存到数据库中。
+   - **展示效果**：时间戳会以格式化后的日期时间（如 `2024-11-26 14:30`）展示在笔记条目旁。
 
-![Alt Text](./002.png)
+### 2. **笔记查询功能**
+   用户可以通过标题或内容对笔记进行模糊查询，快速找到需要的笔记。
 
-```properties
-classpath="com.android.tools.build:gradle:3.4.0"
-```
-### 4. `build成功之后`
-#### 4.1 `Error:Execution failed for task ':app:packageDebug'... 出现这个报错`
-build.gradle（:app）中的 android{ ... } 中 添加：
+   - **实现方式**：在数据库中使用 `LIKE` 查询语句，分别对笔记的标题和内容进行匹配，支持模糊搜索。
+   - **查询界面**：在笔记列表页面顶部添加一个搜索框，用户输入查询内容后，会实时更新显示符合条件的笔记条目。
 
-![Alt Text](./003.png)
+### 3. **UI 美化**
+   在基础界面的设计上进行了美化，改进了用户体验。
 
-```properties
-packagingOptions {
-    exclude 'META-INF/DEPENDENCIES.txt'
-    exclude 'META-INF/LICENSE.txt'
-    exclude 'META-INF/NOTICE.txt'
-    exclude 'META-INF/NOTICE'
-    exclude 'META-INF/LICENSE'
-    exclude 'META-INF/DEPENDENCIES'
-    exclude 'META-INF/notice.txt'
-    exclude 'META-INF/license.txt'
-    exclude 'META-INF/dependencies.txt'
-    exclude 'META-INF/LGPL2.1'
-}
-```
-#### 4.2 `com.android.ide.common.signing.KeytoolException: Failed to read key AndroidDebugKey from store出现这个问题`
-请删除以下两个文件并clean build之后rebuild（此文件的地址请看报错信息）:
+   - **实现方式**：
+     - 更改了记事本的背景颜色，采用更为柔和的颜色搭配。
+     - 更新了按钮样式，增加了阴影和圆角效果，使界面更加现代化。
+     - 改善了字体和布局，使信息展示更为清晰。
 
-![Alt Text](./004.png)
+### 4. **代办功能**
+   用户可以标记笔记为代办事项，或者直接删除某些笔记。
+
+   - **实现方式**：添加一个代办按钮，用户点击后该笔记会被标记为待办状态，可以显示在专门的“待办”列表中，或者可以直接删除笔记。
+   - **功能实现**：
+     - 在每条笔记旁增加一个删除按钮，点击时会询问用户是否确认删除。
+     - 添加代办状态的切换功能，标记为代办的笔记会以不同的样式展示。
+
+### 5. **反向排序**
+   笔记列表会根据时间戳进行反向排序，最新创建的笔记显示在最上面。
+
+   - **实现方式**：查询笔记时，按照时间戳进行降序排序。
+   - **展示效果**：用户能够看到最新的笔记始终在列表的顶部，而旧的笔记则排在下面。
+
+## 项目结构
+
+- **MainActivity**: 主界面，显示笔记列表。
+  - 包含一个 `RecyclerView`，用于显示所有笔记条目。
+  - 包含搜索框功能，用于根据标题或内容查询笔记。
+
+- **NoteDetailActivity**: 用于查看和编辑单个笔记。
+  - 支持编辑笔记的标题和内容。
+  - 提供保存和删除笔记的操作。
+
+- **NoteListAdapter**: 用于管理和显示笔记列表。
+  - 显示笔记的标题、时间戳以及其他必要的操作按钮（如删除、代办按钮）。
+  - 适配器根据时间戳反向排序笔记列表。
+
+- **DatabaseHelper**: 管理本地 SQLite 数据库，存储笔记数据。
+  - 提供插入、更新、删除和查询笔记的功能。
+  - 支持按标题和内容查询笔记。
+
+## 安装与运行
+
+### 1. 克隆项目
+   首先将项目从 GitHub 克隆到本地：
+
+   ```bash
+   git clone https://github.com/yourusername/NotepadApp.git
+   ```
+
+### 2. 打开项目
+   在 Android Studio 中打开该项目：
+
+   - 打开 Android Studio，点击 **Open an existing project**，选择本地克隆下来的项目文件夹。
+   - 等待 Gradle 构建完成。
+
+### 3. 编译并运行应用
+   - 点击 **Run** 按钮，选择连接的 Android 设备或模拟器。
+   - 应用将在设备或模拟器上启动，用户可以开始使用。
+
+---
+
+## 功能演示
+
+### 笔记列表界面
+- 显示所有笔记的标题、内容摘要和创建时间（时间戳）。
+- 用户可以点击每一条笔记，进入 **NoteDetailActivity** 页面查看或编辑。
+
+### 添加笔记
+- 用户点击添加按钮进入笔记编辑页面。
+- 在编辑页面，可以输入标题、内容，并保存或删除笔记。
+
+### 笔记查询
+- 在笔记列表页面，用户可以通过搜索框输入查询条件，实时过滤符合条件的笔记。
+
+### 代办功能
+- 每条笔记都有一个删除按钮，用户可以删除某条笔记。
+- 可以将笔记标记为代办，代办笔记将显示在一个单独的列表或高亮显示。
+
+---
+
+## 技术栈
+
+- **编程语言**: Java
+- **开发环境**: Android Studio
+- **数据库**: SQLite
+- **界面设计**: XML 布局文件
+- **依赖库**:
+  - RecyclerView: 用于展示笔记列表。
+  - SQLite: 用于存储和查询笔记数据。
+
+---
+
+## 贡献
+
+欢迎任何形式的贡献！如果你遇到了 Bug 或有改进建议，可以通过以下方式参与：
+1. 提交 Issue。
+2. Fork 项目并提交 Pull Request。
+
+感谢你对该项目的关注和支持！
+
+---
+
+这个 README 文件包含了项目的详细介绍、功能实现以及如何运行和贡献的步骤，应该能帮助你更好地理解项目的结构与实现。如果你有其他需求或想要进一步调整，告诉我，我会帮助修改！
